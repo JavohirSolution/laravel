@@ -393,6 +393,7 @@
         AOS.init();
     </script>
 
+<script src="salom2/assets/js/main.js"></script>
 
 <script src="Arsha/Arsha/assets/vendor/aos/aos.js"></script>
   <script src="Arsha/Arsha/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
