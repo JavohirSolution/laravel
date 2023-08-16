@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+section{
+    max-width: 100%;
+    max-height: 100vh;
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+@media(max-width:1000px){
+    .left{
+        display: none;
+    }
+    .right{
+        max-width: 100%;
+    
+        
+    }
+    .right .page{
+        width: 200%;
+    }
+}
+.left{
+
+    min-width: 55%;
+    background: linear-gradient(#040540, #1a2360);
+    background-image: url('img/bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+}
+.left h1{
+    font-size: 44px;
+}
+.left img{
+    width: 350px;
+    height: 350px;
+}
+.right{
+    max-width: 40%;
+    background: #fff;
+    min-height: 100vh;
+}
+.right .page{   
+    padding: 70px;
+    margin-left: 90px;
+    margin-top: 200px;
+    border: 3px solid #040540;
+    border-radius: 10px; 
+}
+.right .page h3{
+     font-size: 34px;
+}
+.login-input{
+    padding: 10px 0px;
+    padding-right: 70px;
+    padding-left: 5px;
+    border: 1px solid #040540;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+.password-input{
+    padding: 10px 0px;
+    padding-right: 70px;
+    padding-left: 5px;
+    border: 1px solid #040540;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+button{
+    background-image: url('/img/bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    min-width: 100%;
+    padding: 10px 70px;
+}
+input{
+    border: none;
+    outline: none;
+    font-size: 22px;
+}
+::placeholder{
+    color: #040540;
+}

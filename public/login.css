@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@500&family=Noto+Sans+JP:wght@500&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login{
+    
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(65, 100, 240);
+
+    
+}
+
+.container{
+    width: 70%;
+    margin-top: 125px;
+    display: flex;
+    border-radius: 50px ;
+}
+.image-left{
+    width: 50%;
+}
+.image-left img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+}
+
+
+.kabinet-right{
+    padding: 20px 20px;
+    background: white;
+    width: 50%;
+    border-radius: 0 15px 15px 0;
+}
+
+.kabinet-right h2{
+    color: #1d1a1a;
+    text-align: center;
+    font-weight: 1;
+
+}
+#input1{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 15px 0 0 20px;
+}
+#input2{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 15px 0 0 20px;
+
+}
+
+.eslab-qol-party{
+    display: flex;
+    align-items: center;
+    margin-left: 32px;
+}
+#inp-check{
+    width: 17px;
+    height: 17px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+.eslab-qol-party p{
+    font-size: 20px;
+    margin: 17px;
+}
+.btn-btn-party{
+    width: 90%;
+    margin: auto;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(65, 100, 240);
+    font-size: 20px;
+    color: white;
+    margin-left: 26px;
+    margin: 20px 20px ;
+
+}
+
+.pastki-qism{
+    display: flex;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    
+
+}
+.pastki-qism i
+{
+    font-size: 25px;
+    color: white;
+    margin: 3px 0;
+
+}
+.pastki-qism h1{
+    font-size: 25px;
+    color: white;
+}
+@media(max-width:1100px){
+    .image-left img{
+        display: none;
+    }
+    .kabinet-right{
+        width: 100%;
+        border-radius: 15px 15px 15px 15px;
+       
+    }
+    .container{
+      position: absolute;
+      left: -1%;
+
+    }
+}
