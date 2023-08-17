@@ -80,7 +80,7 @@ Route::post('/editimage/{id}', 'UserController@editimage');
 
 // gal
 Route::get('/addgal', 'HomeController@addgal');
-// Route::post('/filter', 'FilterController@filter');
+Route::post('/filter', 'HomeController@filter');
 
 // --gal
 

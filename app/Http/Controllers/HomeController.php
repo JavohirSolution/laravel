@@ -33,7 +33,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+   public function index(Request $request)
     {
        $kim =Gallery::count();
 
@@ -58,9 +58,11 @@ class HomeController extends Controller
            'ilm' => $tuw
        ]);
 
-    }
+    } 
 
 
+       
+    
 
     public function gallery() {
         $gal = Gallery::all();
@@ -75,8 +77,7 @@ class HomeController extends Controller
         $tuw = $kim + $kur;
         return view('gallery', [
             'wet' =>$wet,
-
-            'gal' => $gal,
+            'gal'=>$gal,
             'number'=>$count,
             'who' => $kim,
             'kur' => $kur,
@@ -275,8 +276,8 @@ class HomeController extends Controller
         $salom = new Gallery();
         $salom->name= $_POST['name'];
         $salom->who= $_POST['job'];
-        // dd($request->video);
-        // $salom->image=  $_POST['video'];
+        $salom->num= $_POST['num'];
+
         $images = time().'.'.$request->file->getClientOriginalExtension();
         $request->file->move(public_path('file'), $images);
         

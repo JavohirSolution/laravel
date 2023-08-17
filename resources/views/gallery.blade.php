@@ -24,7 +24,13 @@
       display:        flex;
       color:         white;
     }
-    
+    #select{
+      width: 20%;
+      padding: 40px
+    }
+    #media-class-id{
+      width: 400px;
+    }
   </style>
 
   <!-- Google Font: Source Sans Pro -->
@@ -109,7 +115,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             @foreach($wet as $dd)
-            <div class="media">
+            <div class="media" id="media-class-id">
               <img src="salom/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
@@ -294,15 +300,20 @@
           <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
             </div>
             <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Job</label>
+              <input type="text" name="job" class="form-control" id="exampleFormControlInput1" placeholder="Occupation">
+          </div>
+            <div class="mb-3">
 
-                <label for="exampleFormControlInput1" class="form-label">Job</label>
-                <select class="form-select" id="" name="job">
-                  <option value="1">Direktor</option>
-                  <option value="2">Student</option>
-                  <option value="3">Teacher</option>
+                <label for="exampleFormControlInput1" class="form-label">Number</label>
+                <select class="form-select" id="" name="num">
+                  <option value="1" disabled>Choose</option>
+                  <option value="1">Director</option>
+                  <option value="2">Full stack developer</option>
+                  <option value="3">Web designer</option>
                 </select>
 
             </div>
@@ -324,7 +335,7 @@
     </div>
   </div>
 
-     
+  
 
         <!-- Modal -->
 
@@ -339,9 +350,45 @@
                 Qo'shish
             </button>
           @endif --}}
-            
+      {{-- <form action="/filter" method="POST">
+        @csrf
+           {{-- @if ( $type == "all") --}}
+            {{-- <select class="form-select border border-success p-2" aria-label="Default select example"  id="select" name="filter">
+              <option value="all" selected>All</option>
+              <option value="1">Director</option>
+              <option value="2">Full stack developer</option>
+              <option value="3">Web designer</option>
+            </select>  --}}
+          {{-- @endif --}}
+           
+          {{-- @if ( $type == "1" )
+            <select name="filter" class="form-select border border-success p-2" aria-label="Default select example" id="select">
+              <option value="all">All</option>
+              <option value="1" selected>Director</option>
+              <option value="2">Full stack developer</option>
+              <option value="3">Web designer</option>
+            </select>
+         @endif
+         @if ( $type == "2" )
+          <select name="filter" class="form-select border border-success p-2" aria-label="Default select example" id="select">
+            <option value="all">All</option>
+            <option value="1">Director</option>
+            <option value="2" selected>Full stack developer</option>
+            <option value="3">Web designer</option>
+          </select>
+        @endif
+        @if ( $type == "3" )
+          <select name="filter" class="form-select border border-success p-2" aria-label="Default select example" id="select">
+            <option value="all">All</option>
+            <option value="1">Director</option>
+            <option value="2">Full stack developer</option>
+            <option value="3" selected>Web designer</option>
+          </select>
+        @endif --}}
+          {{-- <button class="btn btn-success p-2" style="margin-top: 10px;">Filter</button>
+      </form> --}}
+
         
-             
          
           
              
@@ -361,18 +408,18 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($gal as $dd)
+      @foreach($gal as $dd)     
       <tr>
         <th scope="row">{{$number++}}</th>
         <td>{{$dd->name}}</td>
-        @if($dd->who == 1)
-        <td><button class="btn btn-success">SuperAdmin</button></td>
+        @if($dd->num == 1)
+        <td>{{$dd->who}}</td>
         @endif
-        @if($dd->who == 2)
-        <td><button class="btn btn-danger">Admin</button></td>
+        @if($dd->num == 2)
+        <td>{{$dd->who}}</td>
         @endif
-        @if($dd->who == 3)
-        <td><button class="btn btn-info">Student</button></td>
+        @if($dd->num == 3)
+        <td>{{$dd->who}}</td>
         @endif
       
 
@@ -380,7 +427,6 @@
         <td>
           {{-- <!-- <img src="images/{{$dd->image}}" class="img-thumbnail" width="120"  alt="{{$dd->image}}"></td> --> --}}
           <a href="/file/{{$dd->image}}"  width="100" target="_blank">ochish</a>
-          {{-- <iframe width="200" height="100" src="{{$dd->image}}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
         </td>
         <td>
           <a href="" class='btn btn-danger'  data-bs-toggle="modal" data-bs-target="#exampleModal4{{$dd->id}}">Delete</a>

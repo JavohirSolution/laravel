@@ -10,8 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link href="salom/dist/img/IT-park.jpg" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
     <link rel="stylesheet" href="welcome.css">
+
+
     
 
    
@@ -65,25 +66,6 @@
   </header><!-- End Header -->        
 
 
-<!--    
-        <header>
-            <nav>
-                <h1 class="logo"> <a href="/" id="title-son-ikki">IT PROGRESS</a></h1>
-                <ul class="navigation">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#about">About us</a></li>
-                    <li><a href="#project">Our projects</a></li>
-                    <li><a href="#servise">Our services</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <a class="login-link logen" style="display:none" href="{{ route('login') }}" >Login</a>
-                        <a class="login-link logen" href="{{ route('register') }}" style="display:none" >Login</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-      -->
         <script> 
                 document.addEventListener('keyup', (e) =>{
                 if (e.key == 'a' && e.altKey){
@@ -135,65 +117,88 @@
 
     <!-- About part  -->
 
-    <section id="about">
-   
-        <div class="conatainer">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>ABOUT US</h2>
+    <section id="about" class="about">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            <h2>About Us</h2>
+          </div>
+  
+          <div class="row content">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+              <p>
+                IT PROGRESS SOFTWARE programming company started its work on June 22, 2021. Providing technical assistance in the use of technical tools, creation of websites, as well as development and acceleration of information portals and web resources; Formation of a "digital and information society" in order to ensure the openness of the activities of state bodies and other organizations.
+              </p>
+            
             </div>
-
-            <div class="row">
-                <div class="left-about" data-aos="fade-up" data-aos-duration="2000"> 
-                    <p>IT PROGRESS SOFTWARE programming company started its work on June 22, 2021. Providing technical assistance in the use of technical tools, creation of websites, as well as development and acceleration of information portals and web resources; Formation of a "digital and information society" in order to ensure the openness of the activities of state bodies and other organizations.</p>
-                </div>
-
-                <div class="right-about" data-aos="fade-up" data-aos-duration="3000">
-                    <p>In the field of information and telecommunications, it prepares proposals for draft laws and regulatory documents, draft technical conditions, licensing and regulatory norms and rules, and participates in their development. At the same time, the Center provides information and communication to state and economic administration, local state authorities, other organizations and agencies.</p>
-                    <a href="/about" class="btn-about">Learn more</a>
-                </div>  
-                
+            <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+              <p>
+                In the field of information and telecommunications, it prepares proposals for draft laws and regulatory documents,
+                 draft technical conditions, licensing and regulatory norms and rules, and participates in their development. At the same time, 
+                 the Center provides information and
+                 communication to state and economic administration, local state authorities, other organizations and agencies.  </p>
+                 <a href="/about" class="btn-about">Learn more</a>
             </div>
-        
+          </div>
+  
         </div>
-    </section>
+      </section><!-- End About Us Section -->
+  
+
 
     <!-- count part -->
 
-    <section id="count">
-         <div class="row">
-
-            <div class="count-column">
-                <div class="count-image" data-aos="fade-right" data-aos-duration="3000">
-                    <img src="salom/docs/assets/img/why-us.png" class="rasm-chiq-asrta" alt="rasm chiq">
-                </div>
-
-                <div class="customs-A" data-aos="fade-left" data-aos-duration="3000">
-                    <div class="column">
-                        <i class='bx bx-smile'></i><span></span>
-                        <p><span>Customers</span> number of all Customers</p>
-                    </div>
-                    <div class="column">
-                        <i class='bx bxs-user'></i><span style="font-size:50px">{{$family}}</span>
-                        <p> <span>Employees</span> number of all employees</p>
-                    </div>
-                    <div class="column">
-                        <i class='bx bx-terminal'></i><span  style="font-size:50px">4</span>
-                        <p> <span>Projects</span> all completed projects</p>
-                    </div>
-                    <div class="column">
-                        <i class='bx bxs-award' ></i><span></span>
-                        <p><span>Most</span>  good staff</p>
-                    </div>
-
-                </div>
-
+    <section id="counts" class="counts">
+        <div class="container">
+  
+          <div class="row">
+            <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+                <img src="salom/docs/assets/img/why-us.png" width="100%" class="rasm-chiq-asrta" alt="rasm chiq">
             </div>
-         </div>
-        
-    </section>
-    <!-- Ssfef121A.,012Sf# -->
+  
+            <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+              <div class="content d-flex flex-column justify-content-center">
+                <div class="row">
+                  <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                      <i class="bi bi-emoji-smile"></i>
+                      <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1" class="purecounter"></span>
+                      <p><strong>Customers</strong> number of all Customers.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                      <i class="bi bi-journal-richtext"></i>
+                      <span data-purecounter-start="0" data-purecounter-end="{{$family}}" data-purecounter-duration="1" class="purecounter"></span>
+                      <p><strong>Employees</strong> number of all employees</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                      <i class="bi bi-clock"></i>
+                      <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+                      <p><strong>Projects</strong>all completed projects</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                      <i class="bi bi-award"></i>
+                      <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                      <p><strong>Most</strong>good staff</p>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End .content-->
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Counts Section -->
 
-    <!-- end count part -->
+
 
     <!-- project -->
 
@@ -256,132 +261,133 @@
     <!-- end project -->
 
 
-    <!-- team -->
-    <section id="team" class="team section-bg">
-   <!-- Button trigger modal -->
-     
-       
 
-        <!-- Modal -->
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container">
       
-        
-        <!-- Modal -->
+              <div class="section-title" data-aos="fade-up">
+                <h2>Team</h2>
+                <p>Here are the best employees of our team</p>
+              </div>
       
+              <div class="row">
+                @foreach($gal as $dd)
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="/file/{{$dd->image}}"class="img-fluid" id="one234" target="_blank" alt="">
 
-        <div class="conatainer">
-            <div class="section-title-team" data-aos="fade-right" data-aos-duration="3000"  style="margin: 0 200px">
-                <h2 class="h2-team">TEAM</h2>
-                <h3>Here are the best employees of our team</h3>
-            </div>
-        </div>
-
-            <div class="row">    
-                <div class="container">
-
-                    @foreach($gal as $dd)
-                        
-                         <div class="team-col" data-aos="fade-up" data-aos-duration="3000">
-                             <div class="team-image">
-                                 <a href=""  data-bs-toggle="modal" data-bs-target="#exampleModal{{$dd->id}}">
-                                     <i class='bx bx-plus-circle'></i>
-                                 </a>
-                             </div>
-                             <div class="team-izoh">
-                                 <h2>{{$dd->name}}</h2>
-                                 <h4 style="font-weight:1">{{$dd->who}}</h4>
-                             </div>
-                         </div>
-                    <div class="modal fade" id="exampleModal{{$dd->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
                         </div>
-                        <div class="modal-body">
-                        <a href="/file/{{$dd->image}}" target="_blank">
-                                <img src="/file/{{$dd->image}}"  id="one234" target="_blank" alt="">
-                            </a> 
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
+                        <div class="member-info">
+                        <h4>{{$dd->name}}</h4>
+                        <span>{{$dd->who}}</span>
                         </div>
                     </div>
                     </div>
-                    @endforeach
-                    
-                    
+                @endforeach
+
+      
+              
+      
                 
-            </div>
-        </div>
-
-      </div>
-
-    </section>
-    <!-- end team -->
-
-    <!-- contact -->
-    <section id="contact">
-       
- <h1 class="logo-cont"  data-aos="fade-up" data-aos-duration="3000" >COMMUNICATION CENTER</h1>       
-        <div class="contact-all"  data-aos="fade-up" data-aos-duration="1                                                                                                                                                           000">
-
-        <div class="contact-servise">
             
-
-        </div>
-
-
-            <div class="row12">
-                
-        
-                <div class="connection" >
-                    <h1>Connection</h1> 
-                    <p>If you want to develop the digital world with us, contact us!</p>
-                    <i class='bx bxl-telegram'></i>
-                    <i class='bx bxl-youtube' ></i>
-                    <i class='bx bxl-instagram' ></i>
-                    <i class='bx bxl-linkedin-square'></i>
-                </div>
-
-                <div class="place" > 
-                    <p><i class='bx bxs-location-plus'></i>
-                        Jizzakh region, Jizzakh city
-                        Sh.Rashidov Street, 64
-                    </p>
-                    <p><i class='bx bx-envelope' ></i>info@itprogress.com</p>
-                    <p><i class='bx bxs-phone' ></i>+998 94 344 19 29</p>
-                </div>
+      
+              </div>
+      
             </div>
+          </section><!-- End Team Section -->
 
-                <form action="/xabar" method='post'>
-                  @csrf
-                    <div class="sent-email" >
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="exampleFormControlInput1"  name="name" placeholder="Ism">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control"   id="exampleFormControlInput1" name="email" placeholder="Your email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="subject" id="exampleFormControlInput1" placeholder="Subject">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Subject">
-                        </div>
-                         <textarea class="form-control" name="message" id="exampleFormControlTextarea1" style="font-size:20px;" placeholder="message" cols="30" rows="10"></textarea>
-                        <br>
 
-                           
-                            <button class="btn-sent">Send a message</button>
-                    </div>  
-                </form>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            <h2>COMMUNICATION CENTER</h2>
+          </div>
+  
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="contact-about">
+                <h3>Connection</h3>
+                <p>If you want to develop the digital world with us, contact us!</p>
+                <div class="social-links">
+                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+              <div class="info">
+                <div>
+                  <i class="ri-map-pin-line"></i>
+                  <p> Jizzakh region, Jizzakh city<br>Sh.Rashidov Street, 64</p>
+                </div>
+  
+                <div>
+                  <i class="ri-mail-send-line"></i>
+                  <p>info@example.com</p>
+                </div>
+  
+                <div>
+                  <i class="ri-phone-line"></i>
+                  <p>+998 94 344 19 29</p>
+                </div>
+  
+              </div>
+            </div>
+  
+            <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+                {{-- class="php-email-form" --}}
+                <form action="/xabar" method="post" >
+                @csrf
+                <div class="form-group" >
+                  <input type="text" name="name" class="form-control mb-3" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control mb-3" name="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control mb-3" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control mb-3" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+               
+                <button class="btn-sent">Send Message</button>
+              </form>
+            </div>
+  
+          </div>
+  
         </div>
+      </section>
+      <!-- End Contact Section -->
+  
 
-    </section>
-
-                <!-- end contact -->
 
 
 

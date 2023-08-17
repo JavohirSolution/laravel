@@ -12,29 +12,32 @@ class FilterController extends Controller
         $this->middleware('auth');
     }
 
-    // public function filter(Request $request){
-        
-    //     $user = Gallery::where('who',$_POST['group']);
+    public function filter(Request $request){
+        dd($request);
 
-    //     if ($request->filter == 1) {
-    //       $type = 1;
-    //       $use = Gallery::where('who',$_POST['group'])->get();
+        // if ($request->filter == 1) {
+        //   $type = 1;
+        //   $use = Gallery::where('num',$_POST['filter'])->get();
 
-    //     }
-    //     elseif ($request->filter == 2) {
-    //         $type = 2;
-    //         $use = Gallery::where('who',$_POST['group'])->get();
-    //     }
-    //     elseif ($request->filter == 3) {
-    //         $type = 3;
-    //         $use = Gallery::where('who',$_POST['group'])-get();
-    //     }
-    //     elseif ($request->filter == 'all') {
-    //         $type = 3;
-    //         $use = Gallery::where('who',$_POST['group'])->get();
-    //     }
+        // }
+        // else if ($request->filter == 2) {
+        //     $type = 2;
+        //     $use = Gallery::where('num',$_POST['filter'])->get();
+        // }
+        // else if ($request->filter == 3) {
+        //     $type = 3;
+        //     $use = Gallery::where('num',$_POST['filter'])->get();
+        // }
+        // else if ($request->filter == 'all') {
+        //     $type = 3;
+        //     $use = Gallery::where('num',$_POST['filter'])->get();
+        // }
+        // return view('/gallery',[
+        //     'type'=>$type,
+        //     'tea'=>$use,
+        // ]);
 
         
        
-    // }
+    }
 }
