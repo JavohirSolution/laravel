@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT-PROGRESS</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link href="salom/dist/img/IT-park.jpg" rel="icon">
@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="welcome.css">
 
 
-    
 
-   
+
+
 
     <link href="Arsha/Arsha/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
@@ -33,7 +33,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        
+
     </head>
 <body>
 
@@ -51,33 +51,33 @@
           <li><a class="nav-link scrollto" href="#project">Our projects</a></li>
           <li><a class="nav-link scrollto" href="#servise">Our services</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-         
+
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-         
-          <li> 
+
+          <li>
             <a class="login-link logen" style="display:none" href="{{ route('login') }}" >Login</a>
-            
+
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->        
+  </header><!-- End Header -->
 
 
-        <script> 
+        <script>
                 document.addEventListener('keyup', (e) =>{
                 if (e.key == 'a' && e.altKey){
                     var logen = document.querySelector('.logen')
                     logen.style.display = 'block'
-                } 
+                }
                 if (e.key == 's' && e.altKey) {
                     var logen = document.querySelector('.logen')
                     logen.style.display = 'none'
                 }
                 })
-        </script> 
+        </script>
         <section id="hero" class="d-flex align-items-center">
 
                 <div class="container">
@@ -100,7 +100,7 @@
                     <div class="row">
 
                         <div class="lets-dev">
-                            <div class="develop" data-aos="fade-up"  data-aos-duration="3000"> 
+                            <div class="develop" data-aos="fade-up"  data-aos-duration="3000">
                                 <h1>Let's develop together in the digital world!</h1>
                                 <h2>Do you want a professional who is a master of his craft to call you?</h2>
                                 <button class="dev-btn"><span> Send a message</span></button>
@@ -109,7 +109,7 @@
                             data-aos-delay="200">
                                 <img src="salom/docs/assets/img/hero-img.png" alt="">
                             </div>
-                        
+
                         </div>
                     </div>
 
@@ -119,43 +119,43 @@
 
     <section id="about" class="about">
         <div class="container">
-  
+
           <div class="section-title" data-aos="fade-up">
             <h2>About Us</h2>
           </div>
-  
+
           <div class="row content">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
               <p>
                 IT PROGRESS SOFTWARE programming company started its work on June 22, 2021. Providing technical assistance in the use of technical tools, creation of websites, as well as development and acceleration of information portals and web resources; Formation of a "digital and information society" in order to ensure the openness of the activities of state bodies and other organizations.
               </p>
-            
+
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
               <p>
                 In the field of information and telecommunications, it prepares proposals for draft laws and regulatory documents,
-                 draft technical conditions, licensing and regulatory norms and rules, and participates in their development. At the same time, 
+                 draft technical conditions, licensing and regulatory norms and rules, and participates in their development. At the same time,
                  the Center provides information and
                  communication to state and economic administration, local state authorities, other organizations and agencies.  </p>
                  <a href="/about" class="btn-about">Learn more</a>
             </div>
           </div>
-  
+
         </div>
       </section><!-- End About Us Section -->
-  
+
 
 
     <!-- count part -->
 
     <section id="counts" class="counts">
         <div class="container">
-  
+
           <div class="row">
             <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
                 <img src="salom/docs/assets/img/why-us.png" width="100%" class="rasm-chiq-asrta" alt="rasm chiq">
             </div>
-  
+
             <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
               <div class="content d-flex flex-column justify-content-center">
                 <div class="row">
@@ -166,15 +166,15 @@
                       <p><strong>Customers</strong> number of all Customers.</p>
                     </div>
                   </div>
-  
+
                   <div class="col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                       <i class="bi bi-journal-richtext"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="{{$family}}" data-purecounter-duration="1" class="purecounter"></span>
+                      <span data-purecounter-start="0" data-purecounter-end="{{$family}}" data-purecounter-duration="1" class="purecounter">{{$family}}</span>
                       <p><strong>Employees</strong> number of all employees</p>
                     </div>
                   </div>
-  
+
                   <div class="col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                       <i class="bi bi-clock"></i>
@@ -182,7 +182,7 @@
                       <p><strong>Projects</strong>all completed projects</p>
                     </div>
                   </div>
-  
+
                   <div class="col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                       <i class="bi bi-award"></i>
@@ -194,7 +194,7 @@
               </div><!-- End .content-->
             </div>
           </div>
-  
+
         </div>
       </section><!-- End Counts Section -->
 
@@ -205,7 +205,7 @@
      <section id="project">
         <div class="container">
 
-       
+
             <div class="name-of-project" data-aos="fade-up" data-aos-duration="3000">
                 <h1 class="logo-of-pro">PROJECT</h1>
             </div>
@@ -219,7 +219,7 @@
                         </div>
                     </a>
                     <div class="izoh-of-page">
-                        <span class="label-n">Project Name:</span>  "Ekosfera"  
+                        <span class="label-n">Project Name:</span>  "Ekosfera"
                     </div>
                     <a class="link-of-pro" href="https://ekosfera.uz">Link</a>
                 </div>
@@ -230,7 +230,7 @@
                         </div>
                     </a>
                     <div class="izoh-of-page">
-                        <span class="label-n">Project Name:</span>"E-inspektorpsixolog"    
+                        <span class="label-n">Project Name:</span>"E-inspektorpsixolog"
                     </div>
                     <a class="link-of-pro" href="https://it-progress.uz">Link</a>
                 </div>
@@ -242,22 +242,22 @@
 
                     </a>
                     <div class="izoh-of-page">
-                        <span class="label-n">Project Name:</span>"Baxmalakm.uz"    
+                        <span class="label-n">Project Name:</span>"Baxmalakm.uz"
                     </div>
                     <a class="link-of-pro" href="https://baxmalakm.uz">Link</a>
                 </div>
-                
+
             </div>
 
         </div>
-    </section>  
+    </section>
 
     <!-- as123456#.3541AA -->
 
 
-                
 
-     
+
+
     <!-- end project -->
 
 
@@ -265,12 +265,12 @@
         <!-- ======= Team Section ======= -->
         <section id="team" class="team section-bg">
             <div class="container">
-      
+
               <div class="section-title" data-aos="fade-up">
                 <h2>Team</h2>
                 <p>Here are the best employees of our team</p>
               </div>
-      
+
               <div class="row">
                 @foreach($gal as $dd)
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
@@ -293,20 +293,20 @@
                     </div>
                 @endforeach
 
-      
-              
-      
-                
-            
-      
+
+
+
+
+
+
               </div>
-      
+
             </div>
           </section><!-- End Team Section -->
 
 
 
-   
+
 
 
 
@@ -320,13 +320,13 @@
 
     <section id="contact" class="contact">
         <div class="container">
-  
+
           <div class="section-title" data-aos="fade-up">
             <h2>COMMUNICATION CENTER</h2>
           </div>
-  
+
           <div class="row">
-  
+
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="contact-about">
                 <h3>Connection</h3>
@@ -339,27 +339,27 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
               <div class="info">
                 <div>
                   <i class="ri-map-pin-line"></i>
                   <p> Jizzakh region, Jizzakh city<br>Sh.Rashidov Street, 64</p>
                 </div>
-  
+
                 <div>
                   <i class="ri-mail-send-line"></i>
                   <p>info@example.com</p>
                 </div>
-  
+
                 <div>
                   <i class="ri-phone-line"></i>
                   <p>+998 94 344 19 29</p>
                 </div>
-  
+
               </div>
             </div>
-  
+
             <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
                 {{-- class="php-email-form" --}}
                 <form action="/xabar" method="post" >
@@ -376,23 +376,23 @@
                 <div class="form-group">
                   <textarea class="form-control mb-3" name="message" rows="5" placeholder="Message" required></textarea>
                 </div>
-               
+
                 <button class="btn-sent">Send Message</button>
               </form>
             </div>
-  
+
           </div>
-  
+
         </div>
       </section>
       <!-- End Contact Section -->
-  
+
 
 
 
 
     <!-- Script qismi -->
-  
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="Arsha/Arsha/assets/js/main.js"></script>
     <script>

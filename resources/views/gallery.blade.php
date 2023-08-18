@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard</title>
   <link href="salom/dist/img/IT-park.jpg" rel="icon">
-  
+
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <style>
@@ -129,7 +129,7 @@
             @endforeach
             <!-- Message End -->
           </a>
-          
+
             <!-- Message End -->
           </a>
           <div class="dropdown-divider"></div>
@@ -155,17 +155,17 @@
             <span class="float-right text-muted text-sm">12 hours</span>
           </a>
           <div class="dropdown-divider"></div>
-         
+
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
       <li class="nav-item">
-     
+
         </a>
       </li>
-     
-  
+
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -205,13 +205,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-           
+
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                
+
                 <a href="/newboy" class="nav-link ">
                 <i class="far fa-circle nav-icon"></i>
- 
+
                   <p>Portfolio </p>
                 </a>
               </li>
@@ -233,7 +233,7 @@
                   <p>Video Darslar</p>
                 </a>
               </li>
-           
+
               <li class="nav-item">
                 <a href="/student" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -242,7 +242,7 @@
               </li>
               <li>
                         <a class="dropdown-item-salom" href="{{ route('logout') }}"
-                        
+
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -257,7 +257,7 @@
           </li>
         </ul>
     </nav>
-      
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -272,7 +272,7 @@
           <div class="col-sm-6">
           </div><!-- /.col -->
           <div class="col-sm-6">
-           
+
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -280,7 +280,7 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-   
+
   <!-- /.content-wrapper -->
   <div class='top-margin-auto'>
 
@@ -303,14 +303,10 @@
                 <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Job</label>
-              <input type="text" name="job" class="form-control" id="exampleFormControlInput1" placeholder="Occupation">
-          </div>
-            <div class="mb-3">
 
                 <label for="exampleFormControlInput1" class="form-label">Number</label>
-                <select class="form-select" id="" name="num">
-                  <option value="1" disabled>Choose</option>
+                <select class="form-select" id="" name="job">
+                  <option value="0">Choose</option>
                   <option value="1">Director</option>
                   <option value="2">Full stack developer</option>
                   <option value="3">Web designer</option>
@@ -320,12 +316,12 @@
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Image</label>
                 <input type="file" name="file" placeholder="linkni kiriting" class="form-control" id="exampleFormControlTextarea1" >
-            </div> 
-           
+            </div>
+
             <br>
             <button class="btn btn-primary">Saqlash</button>
           </div>
-          
+
   <!-- /add modal -->
 
           <!-- JAV-O-HIR-1 -->
@@ -335,7 +331,7 @@
     </div>
   </div>
 
-  
+
 
         <!-- Modal -->
 
@@ -350,18 +346,18 @@
                 Qo'shish
             </button>
           @endif --}}
-      {{-- <form action="/filter" method="POST">
+      <form action="/filter" method="POST">
         @csrf
-           {{-- @if ( $type == "all") --}}
-            {{-- <select class="form-select border border-success p-2" aria-label="Default select example"  id="select" name="filter">
+           @if ( $type == "all")
+            <select class="form-select border border-success p-2" aria-label="Default select example"  id="select" name="filter">
               <option value="all" selected>All</option>
               <option value="1">Director</option>
               <option value="2">Full stack developer</option>
               <option value="3">Web designer</option>
-            </select>  --}}
-          {{-- @endif --}}
-           
-          {{-- @if ( $type == "1" )
+            </select>
+          @endif
+
+           @if ( $type == "1" )
             <select name="filter" class="form-select border border-success p-2" aria-label="Default select example" id="select">
               <option value="all">All</option>
               <option value="1" selected>Director</option>
@@ -384,15 +380,15 @@
             <option value="2">Full stack developer</option>
             <option value="3" selected>Web designer</option>
           </select>
-        @endif --}}
-          {{-- <button class="btn btn-success p-2" style="margin-top: 10px;">Filter</button>
-      </form> --}}
+        @endif
+           <button class="btn btn-success p-2" style="margin-top: 10px;">Filter</button>
+      </form>
 
-        
-         
-          
-             
-       
+
+
+
+
+
         <br>
         <!-- Export haqida -->
 
@@ -408,20 +404,20 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($gal as $dd)     
+      @foreach($gal as $dd)
       <tr>
         <th scope="row">{{$number++}}</th>
         <td>{{$dd->name}}</td>
-        @if($dd->num == 1)
-        <td>{{$dd->who}}</td>
+        @if($dd->who == 1)
+        <td>Director</td>
         @endif
-        @if($dd->num == 2)
-        <td>{{$dd->who}}</td>
+        @if($dd->who == 2)
+        <td>Full satck developer</td>
         @endif
-        @if($dd->num == 3)
-        <td>{{$dd->who}}</td>
+        @if($dd->who == 3)
+        <td>Web designer</td>
         @endif
-      
+
 
 
         <td>
@@ -446,7 +442,7 @@
                   <button type="button" class="btn btn-secondary" style="width:49%" data-bs-dismiss="modal">Cancel</button>
                   <a href="/gallerdel/{{$dd->id}}" class="btn btn-primary" style="width:49%">Delete</a>
                 </div>
-              
+
               </div>
             </div>
           </div>
@@ -455,7 +451,7 @@
           <!--/ delete modal -->
           <button class='btn btn-primary editbtn' value="{{$dd->id}}"  data-bs-toggle="modal" data-bs-target="#exampleModal3{{$dd->id}}">Edit</button>
            <!-- edit Model -->
-           
+
           <!-- Modal -->
           <div class="modal fade" id="exampleModal3{{$dd->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -471,19 +467,19 @@
 
                   <input type="hidden" name="student_id" id="student_id">
 
-                  <div class="mb-3">  
+                  <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Name</label>
                       <input type="text" name="name" id="name" value="{{$dd->name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Jobs</label>
                       <input type="text" name="jobs" id="code" value="{{$dd->who}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>          
-              
+                  </div>
+
                   <button type="submit" id="btn-save" class="btn btn-primary">Saqlash</button>
               </form>
                 </div>
-              
+
               </div>
             </div>
           </div>
@@ -497,7 +493,7 @@
     </table>
 
   </div>
- 
+
     <!--/ Table part-main -->
 
 
@@ -506,7 +502,7 @@
 
 
 
- 
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -531,7 +527,7 @@
 <script src="salom/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
 <script src="salom/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap --> 
+<!-- JQVMap -->
 <script src="salom/plugins/jqvmap/jquery.vmap.min.js"></script>
 <script src="salom/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->

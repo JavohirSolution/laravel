@@ -55,7 +55,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- Right navbar links -->
@@ -106,7 +106,7 @@
             @endforeach
             <!-- Message End -->
           </a>
-         
+
             <!-- Message End -->
           </a>
           <div class="dropdown-divider"></div>
@@ -140,17 +140,17 @@
         </a>
       </li>
       <!-- LOGOUT qismi -->
-      
+
       <!-- LOGOUT qismi  closed-->
 
-      
+
     </ul>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   @extends('layouts.app2')
-  
+
   @section('content')
 
   <!-- Content Wrapper. Contains page content -->
@@ -202,7 +202,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-             
+
             </div>
           </div>
           <!-- ./col -->
@@ -217,7 +217,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-             
+
             </div>
           </div>
           <!-- ./col -->
@@ -232,7 +232,7 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-             
+
             </div>
           </div>
           <!-- ./col -->
@@ -273,7 +273,7 @@
     <!--/ Table part-main -->
 
 
-    @endsection                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+    @endsection
 
 
   <!-- Control Sidebar -->

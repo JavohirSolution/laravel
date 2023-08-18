@@ -41,9 +41,9 @@ class HomeController extends Controller
 
        $kur = Message::count();
        $wet = Message::all();
-       $var = Video::count(); 
+       $var = Video::count();
 
-    
+
 
 
        $tuw = $kim + $kur;
@@ -58,22 +58,64 @@ class HomeController extends Controller
            'ilm' => $tuw
        ]);
 
-    } 
+    }
 
 
-       
-    
-
-    public function gallery() {
-        $gal = Gallery::all();
+    public function filter(Request $request){
+        // dd($request);
         $wet = Message::all();
-        
+
         $count = 1;
         $kim =Gallery::count();
         $kur = Message::count();
 
+        $tuw = $kim + $kur;
+        if ($request->filter == 1) {
+          $type = 1;
+          $gal = Gallery::where('who',$_POST['filter'])->get();
 
-                
+        }
+        else if ($request->filter == 2) {
+            $type = 2;
+            $gal = Gallery::where('who',$_POST['filter'])->get();
+        }
+        else if ($request->filter == 3) {
+            $type = 3;
+            $gal = Gallery::where('who',$_POST['filter'])->get();
+        }
+        else if ($request->filter == 'all') {
+            $type = 'all';
+            $gal = Gallery::all();
+        }
+        return view('/gallery',[
+            'type'=>$type,
+            'wet' =>$wet,
+            'gal'=>$gal,
+            'number'=>$count,
+            'who' => $kim,
+            'kur' => $kur,
+            'ilm' => $tuw,
+            'type' => $type
+        ]);
+
+
+
+    }
+
+
+
+
+
+    public function gallery() {
+        $gal = Gallery::all();
+        $wet = Message::all();
+
+        $count = 1;
+        $kim =Gallery::count();
+        $kur = Message::count();
+
+        $type = 'all';
+
         $tuw = $kim + $kur;
         return view('gallery', [
             'wet' =>$wet,
@@ -81,7 +123,8 @@ class HomeController extends Controller
             'number'=>$count,
             'who' => $kim,
             'kur' => $kur,
-            'ilm' => $tuw
+            'ilm' => $tuw,
+            'type' => $type
         ]);
     }
     public function LoginImage() {
@@ -122,7 +165,7 @@ class HomeController extends Controller
     public function Newboy(){
         $newboy = Newboy::all();
 
-        
+
         return view('newboy',[
             'newboy' => $newboy
         ]);
@@ -133,7 +176,7 @@ class HomeController extends Controller
     //         'me' => $mes
     //     ]);
     // }
-   
+
 
 
 
@@ -187,7 +230,7 @@ class HomeController extends Controller
 
 
 
-    // add teacherga 
+    // add teacherga
     // public function addteacher()
     // {
     //     return view('addteacher');
@@ -263,24 +306,23 @@ class HomeController extends Controller
         $teacher = new Teacher();
         $teacher->name = $_POST['name'];
         $teacher->age = $_POST['age'];
-        $teacher->address = $_POST['address'];  
+        $teacher->address = $_POST['address'];
 
         $teacher->save();
         return redirect('/teacher');
     }
 
-    
-    // gallery controller 
+
+    // gallery controller
     public function addgalsave(Request $request) {
         // dd($request);
         $salom = new Gallery();
         $salom->name= $_POST['name'];
         $salom->who= $_POST['job'];
-        $salom->num= $_POST['num'];
 
         $images = time().'.'.$request->file->getClientOriginalExtension();
         $request->file->move(public_path('file'), $images);
-        
+
         $salom->image= $images;
 
 
@@ -330,7 +372,7 @@ class HomeController extends Controller
     public function addImageL0gsave(Request $request){
         $logI = new LoginImage();
         $logI->name = $_POST['name'];
-        
+
         $image = time().'.'.$request->image->getClientOriginalExtension();
         $request->image->move(public_path('images'), $image);
         $logI->image= $image;
@@ -353,7 +395,7 @@ class HomeController extends Controller
 
 
     // add Pupilga
-    
+
     public function addpupil()
     {
         return  view('addpupil');
@@ -362,9 +404,9 @@ class HomeController extends Controller
     {
         // dd('efwef');
         $pupil = new Pupil;
-        $pupil->name = $_POST['name']; 
-        $pupil->email = $_POST['Email']; 
-        $pupil->password = $_POST['Password']; 
+        $pupil->name = $_POST['name'];
+        $pupil->email = $_POST['Email'];
+        $pupil->password = $_POST['Password'];
 
         $pupil->save();
         return redirect('/pupil');
@@ -401,7 +443,7 @@ class HomeController extends Controller
         return redirect('Newboy');
     }
 
-    
+
 
 
 
@@ -434,7 +476,7 @@ class HomeController extends Controller
         ]);
         return redirect('');
     }
-    
+
     public function editkalla($id){
         $pupil = Pupil::where('id',$id)->first();
         return view('editpupil',[
