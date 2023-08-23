@@ -13,19 +13,19 @@ use App\Fayl;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     $user = Gallery::all();
     $family = Gallery::count();
     // $fayl = Fayl::all();
-    
-    
-    return view('welcome',[
+
+
+    return view('welcome', [
         'gal' => $user,
         'family' => $family
         // 'fayl'=> $fayl
-       
+
     ]);
-    
 });
 
 Auth::routes();
@@ -119,7 +119,7 @@ Route::get('/addnewboy', 'HomeController@addnewboy');
 Route::post('/addnewboyserve', 'HomeController@addnewboyserve');
 
 Route::get('/newboy', 'UsefulController@newboy');
-Route::post('/Userprofile/{id}','UsefulController@Userprofile');
+Route::post('/Userprofile/{id}', 'UsefulController@Userprofile');
 
 
 // xabar
@@ -145,24 +145,24 @@ Route::get('/faylpdf', 'UserController@faylpdf');
 
 Route::post('/xabar', 'XabarController@xabar');
 
-// export qismi  
+// export qismi
 
 Route::get('export', 'XabarController@export')->name('export');
-Route::get('export3', 'XabarController@export3')->name('export');   
+Route::get('export3', 'XabarController@export3')->name('export');
 Route::get('export2', 'XabarController@export2')->name('export');
 
-// --/export qismi  
+// --/export qismi
 
 
 // import qismi
 Route::get('importExportView', 'XabarController@importExportView');
-Route::post('/import','XabarController@import');
+Route::post('/import', 'XabarController@import');
 
 Route::get('import2', 'XabarController@import2');
-Route::post('/import3','XabarController@import3');
+Route::post('/import3', 'XabarController@import3');
 
 Route::get('importmess', 'XabarController@importmess');
-Route::post('/importmess2','XabarController@importmess2');
+Route::post('/importmess2', 'XabarController@importmess2');
 
 
 
@@ -172,17 +172,18 @@ Route::post('/importmess2','XabarController@importmess2');
 // video controller
 
 Route::get('addvideo', 'VideoController@addvideo');
-Route::post('/addvideos','VideoController@addvideos');
+Route::post('/addvideos', 'VideoController@addvideos');
 Route::get('delvideo/{id}', 'VideoController@delvideo');
-Route::post('/editvideo/{id}','VideoController@editvideo');
+Route::post('/editvideo/{id}', 'VideoController@editvideo');
 
 
 // --/import qismi
+Route::get('chatting', 'ChatController@chatting');
 
 
 // 404 part
 
 
-Route::get('{messages}',function (){
+Route::get('{messages}', function () {
     return view('404');
 });

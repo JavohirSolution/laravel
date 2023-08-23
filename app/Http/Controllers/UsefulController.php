@@ -8,55 +8,49 @@ use App\Gallery;
 use App\Message;
 use Illuminate\Support\Facades\Hash;
 
-
 class UsefulController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-    public function newboy(){
+    public function newboy()
+    {
         $user = User::all();
-
         $wet2 = Message::all();
-
         $kur = Message::count();
-        $kim =Gallery::count();
+        $kim = Gallery::count();
         $tuw = $kim + $kur;
 
-        return view('newboy',[
+        return view('newboy', [
             'user' => $user,
 
 
-            'wet'=>$wet2,
+            'wet' => $wet2,
 
-            'kur'=>$kur,
-            'ilm'=>$tuw,
+            'kur' => $kur,
+            'ilm' => $tuw,
             'who' => $kim,
 
         ]);
     }
 
-    public function Userprofile(Request $request,$id){
-          User::where('id',$id)->update([
+    public function Userprofile(Request $request, $id)
+    {
+        User::where('id', $id)->update([
 
-            'name'=>$request->name,
-            'company'=>$request->company,
-            'job'=>$request->job,
-            'country'=>$request->country,
-            'address'=>$request->address,
-            'phone'=>$request->phone,
-            'email'=>$request->email,
+            'name' => $request->name,
+            'company' => $request->company,
+            'job' => $request->job,
+            'country' => $request->country,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'email' => $request->email,
             'password' => Hash::make($request->password)
 
-           
-           
-        ]); 
-          return redirect('/newboy');
-            
-
-        
-    } 
 
 
+        ]);
+        return redirect('/newboy');
+    }
 }

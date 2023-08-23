@@ -16,6 +16,7 @@ use App\Image;
 use App\Video;
 use App\LoginImage;
 use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -33,140 +34,133 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-   public function index(Request $request)
+    public function index(Request $request)
     {
-       $kim =Gallery::count();
+        $kim = Gallery::count();
+        $gal = Gallery::all();
+        $kur = Message::count();
+        $wet = Message::all();
+        $var = Video::count();
 
-       $gal = Gallery::all();
+        $tuw = $kim + $kur;
+        return view('home', [
 
-       $kur = Message::count();
-       $wet = Message::all();
-       $var = Video::count();
+            'gal' => $gal,
 
-
-
-
-       $tuw = $kim + $kur;
-       return view('home',[
-
-           'gal' => $gal,
-
-           'vedio' =>$var,
-           'wet' =>$wet,
-           'who' => $kim,
-           'kur' => $kur,
-           'ilm' => $tuw
-       ]);
-
+            'vedio' => $var,
+            'wet' => $wet,
+            'who' => $kim,
+            'kur' => $kur,
+            'ilm' => $tuw
+        ]);
     }
 
 
-    public function filter(Request $request){
-        // dd($request);
+    public function filter(Request $request)
+    {
         $wet = Message::all();
 
         $count = 1;
-        $kim =Gallery::count();
+        $kim = Gallery::count();
         $kur = Message::count();
 
         $tuw = $kim + $kur;
         if ($request->filter == 1) {
-          $type = 1;
-          $gal = Gallery::where('who',$_POST['filter'])->get();
-
-        }
-        else if ($request->filter == 2) {
+            $type = 1;
+            $gal = Gallery::where('who', $_POST['filter'])->get();
+        } else if ($request->filter == 2) {
             $type = 2;
-            $gal = Gallery::where('who',$_POST['filter'])->get();
-        }
-        else if ($request->filter == 3) {
+            $gal = Gallery::where('who', $_POST['filter'])->get();
+        } else if ($request->filter == 3) {
             $type = 3;
-            $gal = Gallery::where('who',$_POST['filter'])->get();
-        }
-        else if ($request->filter == 'all') {
+            $gal = Gallery::where('who', $_POST['filter'])->get();
+        } else if ($request->filter == 'all') {
             $type = 'all';
             $gal = Gallery::all();
         }
-        return view('/gallery',[
-            'type'=>$type,
-            'wet' =>$wet,
-            'gal'=>$gal,
-            'number'=>$count,
+        return view('/gallery', [
+            'type' => $type,
+            'wet' => $wet,
+            'gal' => $gal,
+            'number' => $count,
             'who' => $kim,
             'kur' => $kur,
             'ilm' => $tuw,
             'type' => $type
         ]);
-
-
-
     }
 
 
 
 
 
-    public function gallery() {
+    public function gallery()
+    {
         $gal = Gallery::all();
         $wet = Message::all();
 
         $count = 1;
-        $kim =Gallery::count();
+        $kim = Gallery::count();
         $kur = Message::count();
 
         $type = 'all';
 
         $tuw = $kim + $kur;
         return view('gallery', [
-            'wet' =>$wet,
-            'gal'=>$gal,
-            'number'=>$count,
+            'wet' => $wet,
+            'gal' => $gal,
+            'number' => $count,
             'who' => $kim,
             'kur' => $kur,
             'ilm' => $tuw,
             'type' => $type
         ]);
     }
-    public function LoginImage() {
+    public function LoginImage()
+    {
         $log = LoginImage::all();
         return view('LoginImage', [
             'log' => $log
         ]);
     }
-    public function Image(){
+    public function Image()
+    {
         $ima = Image::all();
-        return view('image',[
-            'image'=> $ima
+        return view('image', [
+            'image' => $ima
         ]);
     }
 
     public function teacher()
     {
-        $some =Teacher::all();
-        return view('teacher',[
+        $some = Teacher::all();
+        return view('teacher', [
             'some' => $some
         ]);
     }
 
 
-    public function pupil(){
-        $bear =Pupil::all();
-        return view('pupil',[
+    public function pupil()
+    {
+        $bear = Pupil::all();
+        return view('pupil', [
             'back' => $bear
         ]);
     }
 
-    public function javohir(){
+    public function javohir()
+    {
         $javohir = Javohir::all();
-        return view('javohir',[
+        return view('javohir', [
             'behind' => $javohir
         ]);
     }
-    public function Newboy(){
+    public function Newboy()
+    {
         $newboy = Newboy::all();
 
 
-        return view('newboy',[
+        return view('newboy', [
             'newboy' => $newboy
         ]);
     }
@@ -180,44 +174,54 @@ class HomeController extends Controller
 
 
 
-    public function salom($id){
-        User::where('id',$id)->delete();
+    public function salom($id)
+    {
+        User::where('id', $id)->delete();
         return back();
     }
-    public function gallerdel($id){
-        Gallery::where('id',$id)->delete();
+    public function gallerdel($id)
+    {
+        Gallery::where('id', $id)->delete();
         return back();
     }
-    public function teachdelete($id){
-        Teacher::where('id', $id )->delete();
+    public function teachdelete($id)
+    {
+        Teacher::where('id', $id)->delete();
         return back();
     }
-    public function studelete($id){
-        Student::where('id',$id)->delete();
+    public function studelete($id)
+    {
+        Student::where('id', $id)->delete();
         return back();
     }
-    public function pupdelete($id){
-        Pupil::where('id',$id)->delete();
+    public function pupdelete($id)
+    {
+        Pupil::where('id', $id)->delete();
         return back();
     }
-    public function javohirdele($id){
-        Javohir::where('id' , $id)->delete();
+    public function javohirdele($id)
+    {
+        Javohir::where('id', $id)->delete();
         return back();
     }
-    public function newDel($id){
-        Newboy::where('id',$id)->delete();
+    public function newDel($id)
+    {
+        Newboy::where('id', $id)->delete();
         return back();
     }
-    public function delLimage($id){
-        LoginImage::where('id',$id)->delete();
+    public function delLimage($id)
+    {
+        LoginImage::where('id', $id)->delete();
         return back();
     }
-    public function dgal($id){
+    public function dgal($id)
+    {
         Image::where('id', $id)->delete();
         return back();
     }
-    public function Deletes($id){
-        Message::where('id',$id)->delete();
+    public function Deletes($id)
+    {
+        Message::where('id', $id)->delete();
         return back();
     }
 
@@ -314,16 +318,17 @@ class HomeController extends Controller
 
 
     // gallery controller
-    public function addgalsave(Request $request) {
+    public function addgalsave(Request $request)
+    {
         // dd($request);
         $salom = new Gallery();
-        $salom->name= $_POST['name'];
-        $salom->who= $_POST['job'];
+        $salom->name = $_POST['name'];
+        $salom->who = $_POST['job'];
 
-        $images = time().'.'.$request->file->getClientOriginalExtension();
+        $images = time() . '.' . $request->file->getClientOriginalExtension();
         $request->file->move(public_path('file'), $images);
 
-        $salom->image= $images;
+        $salom->image = $images;
 
 
         $salom->save();
@@ -332,12 +337,13 @@ class HomeController extends Controller
 
 
 
-    public function addimagesave(Request $request){
+    public function addimagesave(Request $request)
+    {
         $ima = new Image();
         $ima->name = $_POST['name'];
-        $image = time().'.'.$request->image->getClientOriginalExtension();
+        $image = time() . '.' . $request->image->getClientOriginalExtension();
         $request->image->move(public_path('images'), $image);
-        $ima->image= $image;
+        $ima->image = $image;
 
         $ima->save();
         return redirect('/home');
@@ -363,19 +369,21 @@ class HomeController extends Controller
     //     return redirect('/');
     // }
 
-    public function addLoginImage(){
+    public function addLoginImage()
+    {
         $type = 'log';
         return view('addteacher', [
             'type' => $type
         ]);
     }
-    public function addImageL0gsave(Request $request){
+    public function addImageL0gsave(Request $request)
+    {
         $logI = new LoginImage();
         $logI->name = $_POST['name'];
 
-        $image = time().'.'.$request->image->getClientOriginalExtension();
+        $image = time() . '.' . $request->image->getClientOriginalExtension();
         $request->image->move(public_path('images'), $image);
-        $logI->image= $image;
+        $logI->image = $image;
 
         $logI->save();
         return redirect('/LoginImage');
@@ -463,33 +471,36 @@ class HomeController extends Controller
     //     return redirect('');
     // }
     // stu edit
-    public function editahmoq($id){
-        $students = Student::where('id',$id)->first();
-        return view('editstu',[
-            'olim'=>$students
+    public function editahmoq($id)
+    {
+        $students = Student::where('id', $id)->first();
+        return view('editstu', [
+            'olim' => $students
         ]);
     }
-    public function editsavestu(Request $request,$id){
-        Student::where('id',$id)->update([
-            'name'=>$request->name,
-            'email'=>$request->email
+    public function editsavestu(Request $request, $id)
+    {
+        Student::where('id', $id)->update([
+            'name' => $request->name,
+            'email' => $request->email
         ]);
         return redirect('');
     }
 
-    public function editkalla($id){
-        $pupil = Pupil::where('id',$id)->first();
-        return view('editpupil',[
+    public function editkalla($id)
+    {
+        $pupil = Pupil::where('id', $id)->first();
+        return view('editpupil', [
             'pupil' => $pupil
         ]);
     }
-    public function editsavepupil(Request $request,$id){
-        Pupil::where('id',$id)->update([
-            'name'=>$request->name,
-            'email'=>$request->email
+    public function editsavepupil(Request $request, $id)
+    {
+        Pupil::where('id', $id)->update([
+            'name' => $request->name,
+            'email' => $request->email
         ]);
         return redirect('pupil');
-
     }
 
 
@@ -546,6 +557,3 @@ class HomeController extends Controller
     // }
 
 }
-
-
-

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\User;
 use App\Gallery;
 use App\Fayl;
@@ -14,12 +15,12 @@ use App\Imports\messesImport;
 use App\Imports\MessagesImport;
 
 
-// Export 
+// Export
 use App\Exports\UsersExport;
 use App\Exports\GallerysExport;
 use App\Exports\StudentsExport;
 use Maatwebsite\Excel\Facades\Excel;
-// / Export 
+// / Export
 
 
 use Illuminate\Http\Request;
@@ -31,16 +32,18 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function egals($id){
+    public function egals($id)
+    {
         $who = Gallery::where('id', $id)->first();
-        return view('/egal',[
-            'kim'=>$who  
+        return view('/egal', [
+            'kim' => $who
         ]);
     }
-    public function editimage(Request $request,$id){
-        Gallery::where('id',$id)->update([
-            'name'=>$request->name,
-            'who'=>$request->jobs,
+    public function editimage(Request $request, $id)
+    {
+        Gallery::where('id', $id)->update([
+            'name' => $request->name,
+            'who' => $request->jobs,
 
         ]);
         return redirect('/gallery');
@@ -49,8 +52,8 @@ class UserController extends Controller
     public function about()
     {
         $var = User::all();
-        return view('/about',[
-            'var' =>$var
+        return view('/about', [
+            'var' => $var
         ]);
     }
 
@@ -73,7 +76,7 @@ class UserController extends Controller
 
     //     $image = time().'.'.$request->pdf->getClientOriginalExtension();
     //     $request->pdf->move(public_path('pdf'), $image);
-        
+
     //     $fayl2->image= $image;
 
     //     $fayl2->save();
@@ -84,20 +87,21 @@ class UserController extends Controller
     //     return back();
     // }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new UsersExport, 'users.xlsx');
     }
-    public function export2() 
+    public function export2()
     {
         return Excel::download(new StudentsExport, 'students.xlsx');
     }
-    public function export3(){
+    public function export3()
+    {
         return Excel::download(new GallerysExport, 'gallerys.xlsx');
     }
 
 
-    
+
 
     public function importExportView()
     {
@@ -106,33 +110,35 @@ class UserController extends Controller
             'type' => $type
         ]);
     }
-   
-    public function import(Request $request) 
+
+    public function import(Request $request)
     {
-        Excel::import(new UsersImport,request()->file('file'));       
+        Excel::import(new UsersImport, request()->file('file'));
         return back();
     }
 
 
-    public function import2 (){
+    public function import2()
+    {
         $type = 'lol';
         return view('import', [
             'type' => $type
         ]);
     }
-    public function import3(Request $request) 
+    public function import3(Request $request)
     {
         Excel::import(new MessagesImport, request()->file('file'));
         return back();
     }
 
-    public function importmess(){
+    public function importmess()
+    {
         $type = 'mess';
         return view('import', [
             'type' => $type
         ]);
     }
-    public function importmess2(Request $request) 
+    public function importmess2(Request $request)
     {
         // dd($request);
         Excel::import(new messesImport, request()->file('file'));

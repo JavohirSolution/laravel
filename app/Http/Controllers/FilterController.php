@@ -12,7 +12,8 @@ class FilterController extends Controller
         $this->middleware('auth');
     }
 
-    public function filter(Request $request){
+    public function filter(Request $request)
+    {
         dd($request);
 
         // if ($request->filter == 1) {
@@ -37,7 +38,7 @@ class FilterController extends Controller
         //     'tea'=>$use,
         // ]);
 
-        
-       
+
+
     }
 }

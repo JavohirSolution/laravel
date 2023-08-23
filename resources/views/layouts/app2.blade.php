@@ -64,6 +64,12 @@
                   <p>Xabarlar</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/chatting" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chatting</p>
+                </a>
+              </li>
               <li>
                         <a class="dropdown-item-salom" href="{{ route('logout') }}"
 
@@ -77,6 +83,7 @@
                             @csrf
                         </form>
               </li>
+
             </ul>
           </li>
 
